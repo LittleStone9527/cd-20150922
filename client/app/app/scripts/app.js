@@ -17,19 +17,28 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
+    // html5支持
+    $locationProvider.html5Mode(false).hashPrefix('!');
+
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+        templateUrl: 'views/home.html',
+        controller: 'defaultController'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  // 默认Controller
+  .controller("defaultController", function ($scope, $rootScope, $routeParams) {
+
+    // 模板地址
+    $scope.templateUrl = {
+      header: '/views/common/header.html',
+      footer: '/views/common/footer.html',
+
+      undefined: ''
+    };
+  })
+;

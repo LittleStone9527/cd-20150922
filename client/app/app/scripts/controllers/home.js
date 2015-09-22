@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name cdApp.controller:AboutCtrl
+ * @name cdApp.controller:HomeCtrl
  * @description
- * # AboutCtrl
+ * # HomeCtrl
  * Controller of the cdApp
  */
 angular.module('cdApp')
-  .controller('AboutCtrl', function () {
+  .controller('HomeCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
