@@ -7,52 +7,147 @@
 
 body {
   padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  max-width: 414px;
+  margin: auto;
 }
+
 .container-fluid {
   padding-right: 10px;
   padding-left: 10px;
 }
+
 .row {
   margin-right: -5px;
   margin-left: -5px;
 }
+
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   padding-right: 5px;
   padding-left: 5px;
 }
-img{
+
+img {
   width: 100%;
 }
-// 家园
-.jy-banner{
+
+//标题
+.header {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 17px;
+  height: 44px;
+  line-height: 44px;
+  padding-left: 0;
+  padding-right: 0;
+  background: #fff;
+  color: #1f1f21;
+  border-bottom: 1px solid #ddd;
+}
+
+.header i {
+  font-size: 36px;
+  color: rgba(38, 100, 171, 0.81);
+  line-height: 43px;
+}
+
+.header span {
+  text-align: center;
+  display: block;
+}
+
+//菜单
+.console {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #d9d9d9;
+}
+
+.console a {
+  display: block;
+  color: #929292;
+  text-align: center;
+  padding-top: 4px;
+  font-size: 12px;
+}
+
+.console a i {
+  font-size: 24px;
+}
+
+//宝宝
+.jy {
+  position: relative;
+  top: 44px;
+  //margin-bottom: 50px;
+}
+
+.jy-banner {
   margin-bottom: 10px;
 }
-.jy-head{
+
+.jy-head {
   padding-top: 10px;
 }
-.jy-item{
+
+.jy-item {
   border-top: 1px solid #dedbde;
   padding-top: 10px;
   padding-bottom: 10px;
   color: #8c8a8c;
 }
-.jy-name{
+
+.jy-name {
   font-size: 16px;
   margin-bottom: 4px;
   color: #06c1ae;
 }
-.jy-in, .jy-img{
+
+.jy-in, .jy-img {
   margin-bottom: 5px;
 }
-.jy-date{
+
+.jy-img-item {
+  width: 100%;
+  background: url('../images/user-img.jpg') 50% 50% / cover no-repeat;
+}
+
+@media (min-width: 320px) {
+  .jy-img-item {
+    height: 74px;
+  }
+}
+
+@media (min-width: 375px) {
+  .jy-img-item {
+    height: 91px;
+  }
+}
+
+@media (min-width: 414px) {
+  .jy-img-item {
+    height: 102px;
+  }
+}
+
+.jy-date {
   color: #c3bcb6;
   font-size: 12px;
   float: left;
 }
-.jy-like{
+
+.jy-like {
   font-size: 12px;
   float: right;
 }
-.jy-like i{
+
+.jy-like i {
   color: #ff3622;
 }
