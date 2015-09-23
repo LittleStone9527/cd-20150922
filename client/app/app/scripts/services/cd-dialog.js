@@ -31,6 +31,7 @@ angular.module('cdApp')
       className: 'app-dialog',
 
       disableAnimation: true,
+      overlay: false,
       plain: false
     };
 
