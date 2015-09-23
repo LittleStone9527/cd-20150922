@@ -10,7 +10,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   max-width: 768px;
   margin: auto;
-  background-color: #f9f9f9;
+  background-color: #f0eff5;
 }
 
 //html, body {
@@ -107,7 +107,7 @@ img {
 }
 
 //宝宝
-.jy {
+.jy, .lib {
   position: relative;
   top: 44px;
   background: #fff;
@@ -117,76 +117,105 @@ img {
   margin: 0 -10px 0 -10px;
 }
 
-.jy ul {
+.jy ul, .lib ul {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 }
 
-.jy-head {
+.jy-head, .lib-head {
   padding-top: 10px;
 }
 
 .jy-item {
-  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #8c8a8c;
 }
 
-.jy li:first-child .jy-item {
-  border-top: 0;
-}
-
-.jy-name {
+.jy-name, .lib-name {
   font-size: 16px;
   margin-bottom: 4px;
   color: #06c1ae;
 }
 
-.jy-in {
+.jy-in, .lib-in {
   margin-bottom: 5px;
 }
 
-.jy-img-item {
+.jy-img-item, .lib-img-item {
   width: 100%;
   background: 50% 50% / cover no-repeat;
   margin-bottom: 10px;
 }
 
 @media (min-width: 320px) {
-  .jy-img-item {
+  .jy-img-item, .lib-img-item {
     height: 74px;
   }
 }
 
 @media (min-width: 375px) {
-  .jy-img-item {
+  .jy-img-item, .lib-img-item {
     height: 91px;
   }
 }
 
 @media (min-width: 414px) {
-  .jy-img-item {
+  .jy-img-item, .lib-img-item {
     height: 102px;
   }
 }
 
-.jy-date {
+.jy-date, .lib-date {
   color: #c3bcb6;
   font-size: 12px;
   float: left;
 }
 
-.jy-like {
+.jy-like, .lib-type {
   font-size: 12px;
   float: right;
+  color: #8c8a8c;
 }
 
 .jy-like i {
   color: #ff3622;
 }
+//列表
+.lib{
+  background: #f0eff5;
+}
 
+.lib li{
+  background: #fff;
+  margin-right: -10px;
+  margin-left: -10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom: 1px solid #ddd;
+}
+.lib li+li{
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+}
+.lib-item{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.lib-name{
+  margin-bottom: 6px;
+}
+.lib-date{
+  float: right;
+  line-height: 22px;
+}
+.lib-img-item{
+  margin-bottom: 0;
+}
+.lib-type{
+  float: left;
+}
 //我
 .header-user {
   position: fixed;
@@ -279,19 +308,10 @@ img {
 .user .list-in li .col-xs-3 {
   color: #949494;
 }
-//列表
-.lib{
-  position: relative;
-  top: 44px;
-  background: #f9f9f9;
-}
-.lib ul{
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-}
-.lib li{
-  background: #fff;
-  margin-bottom: 10px;
-}
 
+//没有更多
+.no-more{
+  text-align: center;
+  line-height: 3;
+  font-size: 13px;
+}
