@@ -1,4 +1,7 @@
-<div class="set container-fluid" ng-controller="SettingCtrl">
+<!--弹窗头部-->
+<div class="container-fluid" ng-include="templateUrl.headerDialog"></div>
+
+<div class="set container-fluid cddialog-content" ng-controller="SettingCtrl">
   <h3>设置</h3>
   <ul class="list">
     <li class="list-item" ng-class="{'inactive':statusMsgPush==false}">

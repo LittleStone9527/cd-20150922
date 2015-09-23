@@ -22,11 +22,12 @@ angular.module('cdApp')
 
         opt.data.self = ngDialog.open(opt);
         opt.data.self.$title = opt.title;
-        dialog.dialogLis.push(opt.data.self);
+
         // view处理
-        angular.element("#cd-view").css("display", "none");
-        angular.element("#cd-console").css("display", "none");
-        angular.element("#cd-header").css("display", "block");
+        //dialog.dialogLis.push(opt.data.self);
+        //angular.element("#cd-view").css("display", "none");
+        //angular.element("#cd-console").css("display", "none");
+        //angular.element("#cd-header").css("display", "block");
         // TODO: 回调
         deferred.resolve();
       }
@@ -43,16 +44,17 @@ angular.module('cdApp')
       showClose: false,
       //disableAnimation: true,
       //overlay: false,
-      plain: false,
 
-      preCloseCallback: function (val) {
-        // view处理
-        if (dialog.dialogLis.length == 1) {
-          angular.element("#cd-view").css("display", "block");
-          angular.element("#cd-console").css("display", "block");
-          angular.element("#cd-header").css("display", "none");
-        }
-      }
+      //preCloseCallback: function (val) {
+      //  // view处理
+      //  if (dialog.dialogLis.length == 1) {
+      //    angular.element("#cd-view").css("display", "block");
+      //    angular.element("#cd-console").css("display", "block");
+      //    angular.element("#cd-header").css("display", "none");
+      //  }
+      //},
+
+      plain: false
     };
 
     // 弹窗模版

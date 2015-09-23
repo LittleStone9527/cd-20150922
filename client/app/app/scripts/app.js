@@ -55,7 +55,10 @@ angular
 
   })
   // 注册弹窗
-  .run(function ($rootScope, $location, cdDialog) {
+  .run(function ($rootScope, $location, ngDialog, cdDialog) {
+    $rootScope.$on('$locationChangeStart', function (e, n, c) {
+      ngDialog.close();
+    });
     // 注册弹窗
     cdDialog.register("list", "/views/dialog/list.html", null, null, "列表");
     cdDialog.register("setting", "/views/dialog/setting.html", null, null, "设置");
