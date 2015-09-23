@@ -21,11 +21,13 @@ angular.module('cdApp')
         opt.data = {};
 
         opt.data.self = ngDialog.open(opt);
-        deferred.resolve();
+        dialog.dialogLis.push(opt.data.self);
         // view处理
         angular.element("#cd-view").css("display", "none");
         angular.element("#cd-console").css("display", "none");
         angular.element("#cd-header").css("display", "block");
+        // TODO: 回调
+        deferred.resolve();
       }
 
       return deferred.promise;
@@ -43,16 +45,20 @@ angular.module('cdApp')
       plain: false,
 
       preCloseCallback: function (val) {
-        console.log("aaa", val);
         // view处理
-        angular.element("#cd-view").css("display", "block");
-        angular.element("#cd-console").css("display", "block");
-        angular.element("#cd-header").css("display", "none");
+        if (dialog.dialogLis.length == 1) {
+          angular.element("#cd-view").css("display", "block");
+          angular.element("#cd-console").css("display", "block");
+          angular.element("#cd-header").css("display", "none");
+        }
       }
     };
 
-    // 弹窗
+    // 弹窗模版
     dialog.dialogMap = {};
+
+    // 弹窗实例
+    dialog.dialogLis = [];
 
     // 注册弹窗
     dialog.register = function (dialogId, templateUrl, templateStr, className) {
@@ -76,6 +82,18 @@ angular.module('cdApp')
         // 入库
         if (record.plain != undefined) {
           dialog.dialogMap[dialogId] = record;
+        }
+      }
+    };
+
+    // 关闭弹窗
+    dialog.close = function (idx) {
+      if (idx == undefined) {
+        // 关闭最后弹窗
+        if (dialog.dialogLis.length > 0) {
+          dialog.dialogLis[dialog.dialogLis.length-1].close();
+          dialog.dialogLis.splice(-1,1);
+          console.log("bb",dialog.dialogLis.length);
         }
       }
     };
