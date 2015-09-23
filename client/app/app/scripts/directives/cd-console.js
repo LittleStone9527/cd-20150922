@@ -17,7 +17,7 @@ angular.module('cdApp')
         scope.activeIndex = function () {
           var ret = -1;
           switch ($location.path()) {
-            case "/private":
+            case "/private/":
               ret = 3;
               break;
             default :
