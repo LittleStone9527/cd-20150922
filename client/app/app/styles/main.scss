@@ -29,9 +29,11 @@ a:hover, a:focus {
   color: #06c1ae;
   text-decoration: none;
 }
+
 a:focus {
   outline: none;
 }
+
 .container-fluid {
   padding-right: 10px;
   padding-left: 10px;
@@ -67,9 +69,13 @@ img {
   color: #1f1f21;
   border-bottom: 1px solid #ddd;
 }
+
 #cd-header {
-  z-index: 100;
   display: none;
+}
+
+#cd-header .header {
+  z-index: 100000;
 }
 
 .header i {
@@ -111,7 +117,7 @@ img {
 }
 
 //宝宝
-.jy, .lib {
+.jy {
   position: relative;
   top: 44px;
   background: #fff;
@@ -155,7 +161,7 @@ img {
 
 @media (min-width: 320px) {
   .jy-img-item, .lib-img-item {
-    height: 74px;
+    height: 76px;
   }
 }
 
@@ -185,41 +191,51 @@ img {
 
 .jy-like i {
   color: #ff3622;
-}
-//列表
-.lib{
-  background: #f0eff5;
+  margin-left: 6px;
 }
 
-.lib li{
+//列表
+.lib {
+  background: #f0eff5;
+  margin-top: -1px;
+}
+
+.lib li {
   background: #fff;
   margin-right: -10px;
   margin-left: -10px;
   padding-left: 5px;
   padding-right: 5px;
+  border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-.lib li+li{
+
+.lib li + li {
   margin-top: 10px;
-  border-top: 1px solid #ddd;
 }
-.lib-item{
+
+.lib-item {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.lib-name{
+
+.lib-name {
   margin-bottom: 6px;
 }
-.lib-date{
+
+.lib-date {
   float: right;
   line-height: 22px;
 }
-.lib-img-item{
+
+.lib-img-item {
   margin-bottom: 0;
 }
-.lib-type{
+
+.lib-type {
   float: left;
 }
+
 //我
 .header-user {
   position: fixed;
@@ -254,7 +270,7 @@ img {
 .user .list {
   padding-left: 0;
   margin: 15px -5px 0 -5px;
-  font-size: 15px;
+  font-size: 16px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   list-style: none;
@@ -312,20 +328,22 @@ img {
 .user .list-in li .col-xs-3 {
   color: #949494;
 }
+
 //设置
-.set{
-  position: relative;
-  top:44px;
+.set {
   background: #f0eff5;
 }
-.set h3{
+
+.set h3 {
   margin: 25px 10px 10px;
 }
-.set .list{
+
+.set .list {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 }
+
 .list-item {
   margin: 0;
   position: relative;
@@ -339,13 +357,15 @@ img {
   background-color: transparent;
   min-height: 50px;
   line-height: 50px;
-  font-size: 15px;
+  font-size: 16px;
 }
-.list-item span{
+
+.list-item span {
   margin-right: 10px;
   float: right;
   color: #888;
 }
+
 .switch {
   position: relative;
   display: inline-block;
@@ -366,11 +386,13 @@ img {
   z-index: 0;
   text-align: left;
 }
-.switch-list-item{
+
+.switch-list-item {
   float: right;
   margin-top: 6px;
   margin-right: 10px;
 }
+
 .switch-input {
   position: absolute;
   overflow: hidden;
@@ -399,6 +421,7 @@ img {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
+
 .switch-toggle {
   background-color: #ddd;
   position: absolute;
@@ -421,6 +444,7 @@ img {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+
 .switch-toggle:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -449,9 +473,11 @@ img {
   -o-transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
   transition-timing-function: cubic-bezier(0.5, 1.6, 0.5, 1);
 }
+
 .switch-input:checked + .switch-toggle {
   background-color: #06c1ae;
 }
+
 .switch-input:checked + .switch-toggle:before {
   -webkit-transform: translateX(18px);
   -moz-transform: translateX(18px);
@@ -459,8 +485,9 @@ img {
   -o-transform: translateX(18px);
   transform: translateX(18px);
 }
+
 //没有更多
-.no-more{
+.no-more {
   text-align: center;
   line-height: 3;
   font-size: 13px;
@@ -469,5 +496,14 @@ img {
 // 弹窗
 .app-dialog {
   position: absolute;
-  top: 44px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+.app-dialog .ngdialog-content {
+  margin-top: 44px;
 }
