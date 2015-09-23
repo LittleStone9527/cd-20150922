@@ -67,6 +67,10 @@ img {
   color: #1f1f21;
   border-bottom: 1px solid #ddd;
 }
+#cd-header {
+  z-index: 100;
+  display: none;
+}
 
 .header i {
   font-size: 22px;
@@ -319,5 +323,5 @@ img {
 // 弹窗
 .app-dialog {
   position: absolute;
-  top: 0;
+  top: 44px;
 }

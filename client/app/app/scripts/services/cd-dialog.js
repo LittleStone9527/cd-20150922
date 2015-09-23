@@ -22,6 +22,10 @@ angular.module('cdApp')
 
         opt.data.self = ngDialog.open(opt);
         deferred.resolve();
+        // view处理
+        angular.element("#cd-view").css("display", "none");
+        angular.element("#cd-console").css("display", "none");
+        angular.element("#cd-header").css("display", "block");
       }
 
       return deferred.promise;
@@ -36,7 +40,15 @@ angular.module('cdApp')
       showClose: false,
       disableAnimation: true,
       overlay: false,
-      plain: false
+      plain: false,
+
+      preCloseCallback: function (val) {
+        console.log("aaa", val);
+        // view处理
+        angular.element("#cd-view").css("display", "block");
+        angular.element("#cd-console").css("display", "block");
+        angular.element("#cd-header").css("display", "none");
+      }
     };
 
     // 弹窗
