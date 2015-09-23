@@ -42,6 +42,7 @@ angular
     // 模板地址
     $scope.templateUrl = {
       header: '/views/common/header.html',
+      headerDialog: '/views/common/header-dialog.html',
       footer: '/views/common/footer.html',
 
       undefined: ''

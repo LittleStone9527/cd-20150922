@@ -31,6 +31,7 @@ angular.module('cdApp')
     dialog.defaultOpt = {
       template: '/views/dialog/list.html',
       className: 'app-dialog',
+      controller: "defaultController",
 
       showClose: false,
       disableAnimation: true,
