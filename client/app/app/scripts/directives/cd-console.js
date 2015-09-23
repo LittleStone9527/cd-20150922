@@ -7,12 +7,24 @@
  * # cdConsole
  */
 angular.module('cdApp')
-  .directive('cdConsole', function () {
+  .directive('cdConsole', function ($location) {
     return {
       templateUrl: '/views/common/console.html',
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
-        //element.text('this is the cdConsole directive');
+
+        // 激活按钮
+        scope.activeIndex = function () {
+          var ret = -1;
+          switch ($location.path()) {
+            case "/private":
+              ret = 3;
+              break;
+            default :
+              ret = -1;
+          }
+          return ret;
+        };
       }
     };
   });

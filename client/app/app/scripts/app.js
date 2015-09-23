@@ -26,6 +26,10 @@ angular
         templateUrl: 'views/home.html',
         controller: 'defaultController'
       })
+      .when('/private/', {
+        templateUrl: 'views/private/index.html',
+        controller: 'defaultController'
+      })
       .otherwise({
         redirectTo: '/'
       });
