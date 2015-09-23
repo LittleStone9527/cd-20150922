@@ -1,39 +1,37 @@
-<!--全站头部-->
-<div class="container-fluid" ng-include="templateUrl.headerDialog"></div>
+<div class="set container-fluid" ng-controller="SettingCtrl">
+  <h3>设置</h3>
+  <ul class="list">
+    <li class="list-item" ng-class="{'inactive':statusMsgPush==false}">
+      消息提醒
+      <label class="switch switch-list-item">
+        <input type="checkbox" class="switch-input" ng-checked="statusMsgPush" ng-click="statusMsgPush=!statusMsgPush">
 
-<div class="set">
-  <div class="container-fluid">
-    <h3>设置</h3>
-    <ul class="list">
-      <li class="list-item">
-        消息提醒
-        <label class="switch switch-list-item">
-          <input type="checkbox" class="switch-input">
-          <div class="switch-toggle"></div>
-        </label>
-      </li>
-      <li class="list-item">
-        非wifi下使用省流量模式
-        <label class="switch switch-list-item">
-          <input type="checkbox" class="switch-input" checked>
-          <div class="switch-toggle"></div>
-        </label>
-      </li>
-      <li class="list-item">
-        分享设置
-      </li>
-      <li class="list-item">
-        字号大小
+        <div class="switch-toggle"></div>
+      </label>
+    </li>
+    <li class="list-item" ng-class="{'inactive':statusNetSmart==false}">
+      非wifi下使用省流量模式
+      <label class="switch switch-list-item">
+        <input type="checkbox" class="switch-input" ng-checked="statusNetSmart" ng-click="statusNetSmart=!statusNetSmart">
+
+        <div class="switch-toggle"></div>
+      </label>
+    </li>
+    <li class="list-item">
+      分享设置
+    </li>
+    <li class="list-item">
+      字号大小
         <span>
           （默认）中号字
         </span>
-      </li>
-      <li class="list-item">
-        清空缓存
+    </li>
+    <li class="list-item">
+      清空缓存
         <span>
           1,406K
         </span>
-      </li>
-    </ul>
-  </div>
+    </li>
+  </ul>
 </div>
+

@@ -21,6 +21,7 @@ angular.module('cdApp')
         opt.data = {};
 
         opt.data.self = ngDialog.open(opt);
+        opt.data.self.$title = opt.title;
         dialog.dialogLis.push(opt.data.self);
         // view处理
         angular.element("#cd-view").css("display", "none");
@@ -61,7 +62,7 @@ angular.module('cdApp')
     dialog.dialogLis = [];
 
     // 注册弹窗
-    dialog.register = function (dialogId, templateUrl, templateStr, className) {
+    dialog.register = function (dialogId, templateUrl, templateStr, className, title) {
       var record = {plain: undefined};
       if (dialogId) {
         // 定义
@@ -76,8 +77,13 @@ angular.module('cdApp')
           record.template = templateUrl;
           record.plain = true;
         }
+        // class
         if (className && className.length > 0) {
           record.className = className;
+        }
+        // 标题
+        if (title && title.length > 0) {
+          record.title = title;
         }
         // 入库
         if (record.plain != undefined) {
@@ -93,9 +99,20 @@ angular.module('cdApp')
         if (dialog.dialogLis.length > 0) {
           dialog.dialogLis[dialog.dialogLis.length-1].close();
           dialog.dialogLis.splice(-1,1);
-          console.log("bb",dialog.dialogLis.length);
         }
       }
+    };
+
+    // 窗口标题
+    dialog.title = function (idx) {
+      var r = "";
+      if (idx == undefined) {
+        // 最后打开的窗口
+        if (dialog.dialogLis.length > 0) {
+          r = dialog.dialogLis[dialog.dialogLis.length-1].$title;
+        }
+      }
+      return r;
     };
 
     return dialog;
