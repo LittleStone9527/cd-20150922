@@ -8,7 +8,7 @@
  * Service in the cdApp.
  */
 angular.module('cdApp')
-  .factory('cdDialog', function ($q, ngDialog) {
+  .factory('cdDialog', function ($q, $templateCache, $http, ngDialog) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var dialog = function (dialogId, scope, data) {
       var deferred = $q.defer();
@@ -45,6 +45,10 @@ angular.module('cdApp')
         if (templateUrl && templateUrl.length > 0) {
           record.template = templateUrl;
           record.plain = false;
+          // 尝试缓存
+          $http.get(templateUrl).then(function (resp) {
+            $templateCache.put(templateUrl, resp.data);
+          });
         } else if (templateStr && templateStr.length > 0) {
           record.template = templateUrl;
           record.plain = true;
