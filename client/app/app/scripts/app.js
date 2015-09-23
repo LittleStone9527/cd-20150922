@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+
+    'ngDialog'
   ])
   .config(function ($routeProvider, $locationProvider) {
     // html5支持
@@ -35,7 +37,7 @@ angular
       });
   })
   // 默认Controller
-  .controller("defaultController", function ($scope, $rootScope, $routeParams) {
+  .controller("defaultController", function ($scope, $rootScope, $routeParams, cdDialog) {
 
     // 模板地址
     $scope.templateUrl = {
@@ -44,5 +46,14 @@ angular
 
       undefined: ''
     };
+
+    // 弹窗
+    $scope.cdDialog = cdDialog;
+
+  })
+  // 注册弹窗
+  .run(function (cdDialog) {
+    // 列表弹窗
+    cdDialog.register("list", "/views/dialog/list.html", null, null);
   })
 ;

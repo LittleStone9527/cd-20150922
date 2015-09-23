@@ -7,7 +7,7 @@
  * # cdConsole
  */
 angular.module('cdApp')
-  .directive('cdConsole', function ($location) {
+  .directive('cdConsole', function ($location, cdDialog) {
     return {
       templateUrl: '/views/common/console.html',
       restrict: 'A',
@@ -25,6 +25,10 @@ angular.module('cdApp')
           }
           return ret;
         };
+
+        // 弹窗
+        scope.cdDialog = cdDialog;
+
       }
     };
   });
