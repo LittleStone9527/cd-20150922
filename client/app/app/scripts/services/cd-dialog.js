@@ -41,8 +41,8 @@ angular.module('cdApp')
       controller: "defaultController",
 
       showClose: false,
-      disableAnimation: true,
-      overlay: false,
+      //disableAnimation: true,
+      //overlay: false,
       plain: false,
 
       preCloseCallback: function (val) {
