@@ -53,7 +53,8 @@ angular
   })
   // 注册弹窗
   .run(function ($rootScope, $location, cdDialog) {
-    // 列表弹窗
+    // 注册弹窗
     cdDialog.register("list", "/views/dialog/list.html", null, null);
+    cdDialog.register("setting", "/views/dialog/setting.html", null, null);
   })
 ;
