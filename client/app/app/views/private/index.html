@@ -1,4 +1,4 @@
-<div class="user">
+<div class="user" ng-controller="PrivateCtrl">
   <div class="header-user">
     <img src="../images/user-img.jpg"> 用户名
   </div>
@@ -6,8 +6,9 @@
     <ul class="list">
       <li class="row">
         <div class="col-xs-2 list-i"><i class="fa fa-flag-o"></i></div>
-        <div class="col-xs-10 list-line">个人信息<i class="fa fa-angle-down"></i></div>
-        <ul class="col-xs-12 list-in">
+        <div class="col-xs-10 list-line" ng-click="toggleTrigger(0)">个人信息
+          <i class="fa" ng-class="{'fa-angle-down':toggleIdx == 0, 'fa-angle-left':toggleIdx != 0}"></i></div>
+        <ul class="col-xs-12 list-in" ng-show="toggleIdx == 0">
           <li class="row">
             <div class="col-xs-3">用户名</div>
             <div class="col-xs-9">user_id</div>
@@ -60,8 +61,9 @@
       </li>
       <li class="row">
         <div class="col-xs-2 list-i"><i class="fa fa-bell-o"></i></div>
-        <div class="col-xs-10 list-line">宝贝信息<i class="fa fa-angle-down"></i></div>
-        <ul class="col-xs-12 list-in">
+        <div class="col-xs-10 list-line" ng-click="toggleTrigger(1)">宝贝信息
+          <i class="fa" ng-class="{'fa-angle-down':toggleIdx == 1, 'fa-angle-left':toggleIdx != 1}"></i></div>
+        <ul class="col-xs-12 list-in" ng-show="toggleIdx == 1">
           <li class="row">
             <div class="col-xs-3">宝贝姓名</div>
             <div class="col-xs-9">ChildName</div>
