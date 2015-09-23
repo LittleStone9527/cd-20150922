@@ -11,14 +11,16 @@ angular.module('cdApp')
   .factory('cdDialog', function ($q, $templateCache, $http, ngDialog) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var dialog = function (dialogId, scope, data) {
+      //console.log("debug", dialogId);
       var deferred = $q.defer();
 
       if (dialog.dialogMap[dialogId] && dialog.dialogMap[dialogId].template) {
         // 弹窗
         var opt = angular.copy(dialog.defaultOpt);
         angular.extend(opt, dialog.dialogMap[dialogId]);
+        opt.data = {};
 
-        ngDialog.open(opt);
+        opt.data.self = ngDialog.open(opt);
         deferred.resolve();
       }
 
@@ -30,6 +32,7 @@ angular.module('cdApp')
       template: '/views/dialog/list.html',
       className: 'app-dialog',
 
+      showClose: false,
       disableAnimation: true,
       overlay: false,
       plain: false

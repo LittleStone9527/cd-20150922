@@ -8,8 +8,8 @@
  * Controller of the cdApp
  */
 angular.module('cdApp')
-  .controller('PrivateCtrl', function ($scope, cdDialog) {
-    $scope.cdDialog = cdDialog;
+  .controller('PrivateCtrl', function ($scope) {
+    // 切换
     $scope.toggleIdx = -1;
     $scope.toggleTrigger = function (idx) {
       if ($scope.toggleIdx == idx) {
