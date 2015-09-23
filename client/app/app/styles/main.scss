@@ -5,13 +5,13 @@
   padding: 0.2em 0;
 }
 
-//body {
-//  padding: 0;
-//  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-//  max-width: 768px;
-//  margin: auto;
-//  background-color: #f9f9f9;
-//}
+body {
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  max-width: 768px;
+  margin: auto;
+  background-color: #f9f9f9;
+}
 
 //html, body {
 //  width: 100%;
@@ -19,17 +19,19 @@
 //  overflow: hidden;
 //}
 
-body > div {
-  height: 100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-}
+//body > div {
+//  height: 100%;
+//  overflow: scroll;
+//  -webkit-overflow-scrolling: touch;
+//}
 
 a:hover, a:focus {
   color: #06c1ae;
   text-decoration: none;
 }
-
+a:focus {
+  outline: none;
+}
 .container-fluid {
   padding-right: 10px;
   padding-left: 10px;
@@ -254,7 +256,7 @@ img {
   vertical-align: middle;
 }
 
-.user .list .fa-angle-down {
+.user .list .fa-angle-down, .user .list .fa-angle-up {
   float: right;
   margin-top: 13px;
   margin-right: 5px;
@@ -276,4 +278,14 @@ img {
 
 .user .list-in li .col-xs-3 {
   color: #949494;
+}
+//列表
+.lib ul{
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.lib li{
+  background: #fff;
+  margin-bottom: 10px;
 }
