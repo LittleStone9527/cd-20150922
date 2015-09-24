@@ -9,7 +9,7 @@
  */
 angular.module('cdApp')
   .factory('cdDialog', function ($q, $templateCache, $http, ngDialog) {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+
     var dialog = function (dialogId, scope, data) {
       //console.log("debug", dialogId);
       var deferred = $q.defer();
@@ -23,11 +23,6 @@ angular.module('cdApp')
         opt.data.self = ngDialog.open(opt);
         opt.data.self.$title = opt.title;
 
-        // view处理
-        //dialog.dialogLis.push(opt.data.self);
-        //angular.element("#cd-view").css("display", "none");
-        //angular.element("#cd-console").css("display", "none");
-        //angular.element("#cd-header").css("display", "block");
         // TODO: 回调
         deferred.resolve();
       }
@@ -45,23 +40,11 @@ angular.module('cdApp')
       //disableAnimation: true,
       //overlay: false,
 
-      //preCloseCallback: function (val) {
-      //  // view处理
-      //  if (dialog.dialogLis.length == 1) {
-      //    angular.element("#cd-view").css("display", "block");
-      //    angular.element("#cd-console").css("display", "block");
-      //    angular.element("#cd-header").css("display", "none");
-      //  }
-      //},
-
       plain: false
     };
 
     // 弹窗模版
     dialog.dialogMap = {};
-
-    // 弹窗实例
-    dialog.dialogLis = [];
 
     // 注册弹窗
     dialog.register = function (dialogId, templateUrl, templateStr, className, title) {
@@ -98,23 +81,8 @@ angular.module('cdApp')
     dialog.close = function (idx) {
       if (idx == undefined) {
         // 关闭最后弹窗
-        if (dialog.dialogLis.length > 0) {
-          dialog.dialogLis[dialog.dialogLis.length-1].close();
-          dialog.dialogLis.splice(-1,1);
-        }
+        ngDialog.close();
       }
-    };
-
-    // 窗口标题
-    dialog.title = function (idx) {
-      var r = "";
-      if (idx == undefined) {
-        // 最后打开的窗口
-        if (dialog.dialogLis.length > 0) {
-          r = dialog.dialogLis[dialog.dialogLis.length-1].$title;
-        }
-      }
-      return r;
     };
 
     return dialog;

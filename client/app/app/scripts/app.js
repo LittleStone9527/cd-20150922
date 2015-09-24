@@ -48,8 +48,6 @@ angular
       undefined: ''
     };
 
-    $scope.aaa="ggg";
-
     // 弹窗
     $scope.cdDialog = cdDialog;
 
