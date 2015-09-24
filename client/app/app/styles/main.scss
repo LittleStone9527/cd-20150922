@@ -11,6 +11,12 @@ body {
   max-width: 768px;
   margin: auto;
   background-color: #f0eff5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-text-size-adjust: 100%;
 }
 
 //html, body {
@@ -320,12 +326,12 @@ img {
   border-bottom: 1px solid #ddd;
 }
 
-.user .list-in li {
+.user .list-in .row {
   line-height: 44px;
   border-top: 1px solid #ddd;
 }
 
-.user .list-in li .col-xs-3 {
+.user .list-in .row .col-xs-3 {
   color: #949494;
 }
 
