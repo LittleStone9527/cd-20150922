@@ -55,9 +55,15 @@ angular
 
   })
   // 注册弹窗
-  .run(function ($rootScope, $location, ngDialog, cdDialog) {
+  .run(function ($rootScope, $location, $http, $templateCache, ngDialog, cdDialog) {
+    // 跳转时关闭弹窗
     $rootScope.$on('$locationChangeStart', function (e, n, c) {
       ngDialog.close();
+    });
+    // 缓存header
+    var h = "/views/common/header-dialog.html";
+    $http.get(h).then(function (resp) {
+      $templateCache.put(h, resp.data);
     });
     // 注册弹窗
     cdDialog.register("list", "/views/dialog/list.html", null, null, "列表");
