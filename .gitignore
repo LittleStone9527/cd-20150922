@@ -24,3 +24,5 @@ _testmain.go
 
 # webstorm
 .idea/
+
+client/app/web/bower_components
