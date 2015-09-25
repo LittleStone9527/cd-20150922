@@ -1,0 +1,23 @@
+.animate-show {
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add {
+  -webkit-transition:all linear 0.1s;
+  -moz-transition:all linear 0.1s;
+  -ms-transition:all linear 0.1s;
+  -o-transition:all linear 0.1s;
+  transition:all linear 0.1s;
+}
+
+.animate-show.ng-hide-remove {
+  -webkit-transition:all linear 0.3s;
+  -moz-transition:all linear 0.3s;
+  -ms-transition:all linear 0.3s;
+  -o-transition:all linear 0.3s;
+  transition:all linear 0.3s;
+}
+
+.animate-show.ng-hide {
+  opacity: 0;
+}

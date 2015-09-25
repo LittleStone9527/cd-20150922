@@ -9,7 +9,7 @@
 angular.module('cdApp')
   .directive('cdConsole', function ($location, cdDialog) {
     return {
-      templateUrl: '/views/common/console.html',
+      templateUrl: 'views/common/console.html',
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
 
