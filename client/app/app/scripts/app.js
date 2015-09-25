@@ -41,9 +41,9 @@ angular
 
     // 模板地址
     $scope.templateUrl = {
-      header: '/views/common/header.html',
-      headerDialog: '/views/common/header-dialog.html',
-      footer: '/views/common/footer.html',
+      header: 'views/common/header.html',
+      headerDialog: 'views/common/header-dialog.html',
+      footer: 'views/common/footer.html',
 
       undefined: ''
     };
@@ -59,12 +59,12 @@ angular
       ngDialog.close();
     });
     // 缓存header
-    var h = "/views/common/header-dialog.html";
+    var h = "views/common/header-dialog.html";
     $http.get(h).then(function (resp) {
       $templateCache.put(h, resp.data);
     });
     // 注册弹窗
-    cdDialog.register("list", "/views/dialog/list.html", null, null, "列表");
-    cdDialog.register("setting", "/views/dialog/setting.html", null, null, "设置");
+    cdDialog.register("list", "views/dialog/list.html", null, null, "列表");
+    cdDialog.register("setting", "views/dialog/setting.html", null, null, "设置");
   })
 ;

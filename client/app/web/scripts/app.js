@@ -39,8 +39,8 @@ angular
 
     // 模板地址
     $scope.templateUrl = {
-      header: '/views/common/header.html',
-      footer: '/views/common/footer.html',
+      header: 'views/common/header.html',
+      footer: 'views/common/footer.html',
 
       undefined: ''
     };
