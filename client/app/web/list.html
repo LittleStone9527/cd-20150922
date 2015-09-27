@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css" />
+  <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/animate.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="cdApp">
+
+<!-- list弹窗 -->
+<div class="app-dialog">
+  <!--弹窗头部-->
+  <div class="header header-dialog">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-2"><a href="javascript:void(0);" ng-click="ngDialogData.self.close()" style="display: block;"><i class="fa fa-chevron-left"></i></a></div>
+        <div class="col-xs-8"><span>列表</span></div>
+        <div class="col-xs-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lib container-fluid cddialog-content">
+    <!-- content -->
+    <ul>
+      <!-- content-repeat start-->
+      <li class="row">
+        <div class="col-xs-2 lib-head"><img src="images/user-img.jpg"></div>
+        <div class="col-xs-10 lib-item">
+          <div class="row">
+            <div class="col-xs-8"><div class="lib-name">名字</div></div>
+            <div class="col-xs-4"><div class="lib-date">2015-02-12</div></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4"><div class="lib-img-item" style="background-image: url('images/user-img-1.jpg')"></div></div>
+            <div class="col-xs-8">
+              <div class="lib-in">文字标题文字标题文字标题文字标题文字标题</div>
+              <div class="lib-type">文章类型</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="row">
+        <div class="col-xs-2 lib-head"><img src="images/user-img.jpg"></div>
+        <div class="col-xs-10 lib-item">
+          <div class="row">
+            <div class="col-xs-8"><div class="lib-name">名字</div></div>
+            <div class="col-xs-4"><div class="lib-date">2015-02-12</div></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4"><div class="lib-img-item" style="background-image: url('images/user-img-1.jpg')"></div></div>
+            <div class="col-xs-8">
+              <div class="lib-in">文字标题文字标题文字标题文字标题文字标题</div>
+              <div class="lib-type">文章类型</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="row">
+        <div class="col-xs-2 lib-head"><img src="images/user-img.jpg"></div>
+        <div class="col-xs-10 lib-item">
+          <div class="row">
+            <div class="col-xs-8"><div class="lib-name">名字</div></div>
+            <div class="col-xs-4"><div class="lib-date">2015-02-12</div></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4"><div class="lib-img-item" style="background-image: url('images/user-img-1.jpg')"></div></div>
+            <div class="col-xs-8">
+              <div class="lib-in">文字标题文字标题文字标题文字标题文字标题</div>
+              <div class="lib-type">文章类型</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="row">
+        <div class="col-xs-2 lib-head"><img src="images/user-img.jpg"></div>
+        <div class="col-xs-10 lib-item">
+          <div class="row">
+            <div class="col-xs-8"><div class="lib-name">名字</div></div>
+            <div class="col-xs-4"><div class="lib-date">2015-02-12</div></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4"><div class="lib-img-item" style="background-image: url('images/user-img-1.jpg')"></div></div>
+            <div class="col-xs-8">
+              <div class="lib-in">文字标题文字标题文字标题文字标题文字标题</div>
+              <div class="lib-type">文章类型</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <!-- content-repeat end-->
+    </ul>
+    <div class="no-more">没有更多了…</div>
+  </div>
+
+</div>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/ngDialog/js/ngDialog.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<script>
+  angular
+    .module('cdApp', [
+      'ngAnimate',
+      'ngCookies',
+      'ngResource',
+      'ngRoute',
+      'ngSanitize',
+      'ngTouch',
+
+      'ngDialog'
+    ])
+    // 默认Controller
+    .controller("defaultController", function ($scope, $rootScope, $routeParams, cdDialog) {
+
+      // 模板地址
+      $scope.templateUrl = {
+        header: 'views/common/header.html',
+        headerDialog: 'views/common/header-dialog.html',
+        footer: 'views/common/footer.html',
+
+        undefined: ''
+      };
+
+      // 弹窗
+      $scope.cdDialog = cdDialog;
+    })
+  ;
+
+</script>
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<!--<script src="scripts/app.js"></script>-->
+<script src="scripts/controllers/home.js"></script>
+<script src="scripts/directives/cd-console.js"></script>
+<script src="scripts/services/cd-dialog.js"></script>
+<script src="scripts/controllers/private.js"></script>
+<script src="scripts/controllers/setting.js"></script>
+<!-- endbuild -->
+</body>
+</html>
